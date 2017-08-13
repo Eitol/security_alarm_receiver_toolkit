@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CommitMessageTemplateConfig">
+    <option name="manualTemplate" value="# If applied, this commit will...&#10;&#10;# Explain why this change is being made&#10;&#10;# Provide links to any relevant tickets, articles or other resources" />
+  </component>
+</project>

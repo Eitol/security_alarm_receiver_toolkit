@@ -47,7 +47,7 @@ public class Ademco8000Protocol extends Protocol {
      * @param code: e.g: 'A'
      * @apiNote Based on Table 8–11: System Messages. Pag 126
      */
-    public static List<Component> getRequiredComponentsByCode(byte[] code) {
+    public static List<Component> getRequiredComponentsBySystemCode(byte[] code) {
         final byte[][] reqLC = {{'A'}, {'B'}, {'C'}, {'D'}, {'E'}, {'F'}, {'n'},
                 {'o'}, {'p'}, {'q'}, {'r'}, {'s'}, {'t'}};
         final byte[][] reqUSR = {{'y'}, {'z'}};

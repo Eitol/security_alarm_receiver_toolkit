@@ -12,6 +12,11 @@ public interface SimulatorContract {
         void showMessage(String msg, double duration);
         Signal getSignal();
         android.view.View[] getNonRequiredFieldForCurrentMsgType();
+        void setReceptorValue(String value);
+        void setLineValue(String value);
+        void setAccountValue(String value);
+        void setCodeValuePosition(int pos);
+        int getCodeListSize();
     }
 
     interface Present extends BasePresenter {

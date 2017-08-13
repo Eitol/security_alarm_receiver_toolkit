@@ -27,7 +27,7 @@ public class Ademco8000SystemEvent extends Event {
 
     public Ademco8000SystemEvent(byte[] code) {
         Assert.assertTrue(code.length <= 1);
-        super.setRequiredComponents(Ademco8000Protocol.getRequiredComponentsByCode(code));
+        super.setRequiredComponents(Ademco8000Protocol.getRequiredComponentsBySystemCode(code));
         int idx = ArrayAdvancedUtils.deepIndexOf(Ademco8000Protocol.codes, code);
         EventCode e = new EventCode(Ademco8000Protocol.codes[idx], Ademco8000Protocol.descriptions[idx]);
         super.setCode(e);

@@ -3,6 +3,9 @@ package instant.alarmreceptortoolkitapp.simulator;
 import android.util.Log;
 import android.view.View;
 
+import java.util.Locale;
+import java.util.Random;
+
 import instant.alarmreceptortoolkitapp.data.protocols.entities.Signal;
 import instant.alarmreceptortoolkitapp.global.Constants;
 
@@ -50,7 +53,15 @@ public class SimulatorPresenter implements SimulatorContract.Present {
 
     @Override
     public void onMakeRandomSignalRequest() {
-
+        Random rand = new Random(System.currentTimeMillis());
+        int value = 0;
+        String newReceptorValue = String.format(Locale.US,"%02d", rand.nextInt(99));
+        String newLineValue = String.format(Locale.US,"%02d", rand.nextInt(99));
+        String newAccountValue = String.format(Locale.US,"%04d", rand.nextInt(9999));
+        mView.setCodeValuePosition(rand.nextInt(mView.getCodeListSize()));
+        mView.setReceptorValue(newReceptorValue);
+        mView.setLineValue(newLineValue);
+        mView.setAccountValue(newAccountValue);
     }
 
     @Override

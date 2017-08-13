@@ -82,6 +82,33 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
         return new View[]{};
     }
 
+    @Override
+    public void setReceptorValue(String value) {
+        receptor.setText(value);
+    }
+
+    @Override
+    public void setLineValue(String value) {
+        line.setText(value);
+    }
+
+    @Override
+    public void setAccountValue(String value) {
+        account.setText(value);
+    }
+
+    @Override
+    public void setCodeValuePosition(int pos) {
+        code.setSelection(pos);
+    }
+
+    @Override
+    public int getCodeListSize() {
+        return code.getAdapter().getCount();
+    }
+
+
+
     public MsgType getMsgType() {
         if (rbCall.isChecked()) {
             return MsgType.CALL;
@@ -158,5 +185,7 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     Button buttonInfo;
     @BindView(R.id.log)
     EditText log;
+
+
 }
 

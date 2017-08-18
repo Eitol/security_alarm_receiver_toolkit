@@ -27,15 +27,10 @@ public class Ademco8000SignalTest {
     @Test
     public void test_buildFrame_HeartBeat() throws Exception {
         /* Based on the table 8-12 of Mx8000 manual */
-        Signal signal = new Ademco8000Signal(MsgType.HEART_BEAT);
+        Ademco8000Signal signal = new Ademco8000Signal(MsgType.HEART_BEAT);
         assertThat(signal.validateProperties(), is(false));
-
-        signal.addProperty(Component.RECEIVER, "01");
+        signal.setSignalHeader("01","051997","074905","00000");
         assertThat(signal.validateProperties(), is(true));
-
-        signal.addProperty(Component.DATE, "051997");
-        signal.addProperty(Component.TIME, "074905");
-        signal.addProperty(Component.REF, "00000");
         byte[] frame = signal.buildFrame();
         //                 051997"074905"01"0000"d
         byte[] expected = "\u0003051997\"074905\"01\"0000\"d\r".getBytes();
@@ -45,23 +40,21 @@ public class Ademco8000SignalTest {
     @Test
     public void test_buildFrame_System() throws Exception {
         /* Based on the table 8-10 of Mx8000 manual
-          Based on: System Receiver #: 2 Reference #: 1917
+           Based on: System Receiver #: 2 Reference #: 1917
            Pag 10 of the "Sample MX8000 Decimal Display" Document
          */
-        Signal signal = new Ademco8000Signal(MsgType.SYSTEM);
+        Ademco8000Signal signal = new Ademco8000Signal(MsgType.SYSTEM);
+        signal.setSignalHeader("02","012203","042401","1917");
         assertThat(signal.validateProperties(), is(false));
 
+        /* Adding the code */
         byte[] code = {'q'};
         Ademco8000SystemEvent e = new Ademco8000SystemEvent(code);
         e.addComponent(Component.LINE, "01");
-        assertThat(signal.validateProperties(), is(false));
         signal.addEvent(e);
-        assertThat(signal.validateProperties(), is(false));
-        signal.addProperty(Component.RECEIVER, "02");
         assertThat(signal.validateProperties(), is(true));
-        signal.addProperty(Component.DATE, "012203");
-        signal.addProperty(Component.TIME, "042401");
-        signal.addProperty(Component.REF, "1917");
+
+        /* Building the frame */
         byte[] frame = signal.buildFrame();
         byte[] expected = "\u0002012203\"042401\"02\"1917\"q01c\r".getBytes();
         assertTrue(Arrays.equals(frame, expected));

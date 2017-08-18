@@ -1,8 +1,6 @@
 package instant.alarmreceptortoolkitapp.data.protocols.entities;
 
 
-import android.util.Log;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,8 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
-import instant.alarmreceptortoolkitapp.global.Constants;
 
 /**
  * Created by hector on 28/05/17.
@@ -72,9 +68,7 @@ public abstract class Signal implements Frame {
     public void addProperty(Component name, String value) {
         int expectedLen = getPropertyLen(name);
         if (expectedLen != value.length()) {
-            Log.d(Constants.LOG_NAME, "addProperty: Bad property size: "
-                    + name.str() + " set " + value.length() +
-                    ". Expected: " + getPropertyLen(name));
+            // TODO: Print bad size
         }
         if (name == Component.FMT){
             value = standarizeFMT(value);

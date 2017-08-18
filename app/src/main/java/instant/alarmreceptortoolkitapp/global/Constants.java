@@ -17,5 +17,7 @@ public class Constants {
     public static final String DEVICE_NAME = "device_name";
     public static final String TOAST = "toast";
 
-    public static final String RASPBERRY_IP = "http://192.168.1.142:8000";
+    // MESSAGE_DURATION
+    public static final int MESSAGE_DURATION = 100;
+    public static final String RASPBERRY_IP = "http://192.168.3.242:8000";
 }

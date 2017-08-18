@@ -10,7 +10,7 @@ import instant.alarmreceptortoolkitapp.data.protocols.entities.Protocol;
  * Created by hector on 30/07/17.
  */
 
-public class ContactIDProtocol extends Protocol {
+public class ContactIDProtocol implements Protocol {
     
     @Override
     public List<EventCode> getDefaulEventCodes() {

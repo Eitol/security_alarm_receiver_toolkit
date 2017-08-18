@@ -14,7 +14,7 @@ import instant.alarmreceptortoolkitapp.global.ArrayAdvancedUtils;
  * Created by hector on 30/07/17.
  */
 
-public class Ademco8000Protocol extends Protocol {
+public class Ademco8000Protocol implements Protocol {
 
     @Override
     public List<EventCode> getDefaulEventCodes() {
@@ -31,6 +31,11 @@ public class Ademco8000Protocol extends Protocol {
             ev.add(e);
         }
         return ev;
+    }
+
+
+    public static String getProtocolName() {
+        return "Ademco 8000";
     }
 
     private static List<byte[]> getCodeList() {
@@ -50,8 +55,8 @@ public class Ademco8000Protocol extends Protocol {
     public static List<Component> getRequiredComponentsBySystemCode(byte[] code) {
         final byte[][] reqLC = {{'A'}, {'B'}, {'C'}, {'D'}, {'E'}, {'F'}, {'n'},
                 {'o'}, {'p'}, {'q'}, {'r'}, {'s'}, {'t'}};
-        final byte[][] reqUSR = {{'y'}, {'z'}};
-        final byte[][] reqRCVR = {{'b'}, {'c'}, {'d'}, {'e'}, {'f'}, {'~'}, {0x7F}};
+        final byte[][] reqRCVR = {{'y'}, {'z'}};
+        final byte[][] reqUSR = {{'b'}, {'c'}, {'d'}, {'e'}, {'f'}, {'~'}, {0x7F}};
 
         List<Component> r = new ArrayList<>();
         Component c = null;

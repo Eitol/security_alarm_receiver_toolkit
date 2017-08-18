@@ -93,7 +93,11 @@ public class Ademco8000Signal extends Signal {
         }
     }
 
-
+    /**
+     * Build the header based on the current componetns
+     * @param refNumber Reference number
+     * @return The bytes of the signal header
+     */
     private byte[] buildMsgHeader(byte[] refNumber) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] bom = getBOM();
@@ -188,6 +192,26 @@ public class Ademco8000Signal extends Signal {
         // TODO
 //        Map<Component, String> p = getProperties();
         return new byte[0];
+    }
+
+    /**
+     * Set the value of signal header     .
+     * @param rcvr receiver
+     * @param date Date of the signal. If is null then the current date is set
+     * @param time Time of the signal. If is null then the current time is set
+     * @param ref Reference number. If is null then the ref counter is set
+     */
+    public void setSignalHeader(String rcvr, String date, String time, String ref){
+        this.addProperty(Component.RECEIVER, rcvr);
+        if (date != null && date.length() > 0 ) {
+            this.addProperty(Component.DATE, date);
+        }
+        if (time != null && time.length() > 0) {
+            this.addProperty(Component.TIME, time);
+        }
+        if (ref != null && ref.length() > 0) {
+            this.addProperty(Component.REF, ref);
+        }
     }
 
     private byte getIDByMsgType(MsgType msgType) {

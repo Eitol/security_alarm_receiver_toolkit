@@ -54,8 +54,8 @@ public class Ademco8000EventFormater {
             out.write("18".getBytes());
             out.write(event.getQualifier().toNumeric().getBytes());
             out.write(event.getCode().getCode());
-            out.write(event.getComponent(Component.PARTITION));
-            out.write(event.getComponent(Component.ZONE_OR_USER));
+            out.write(event.getComponentValue(Component.PARTITION));
+            out.write(event.getComponentValue(Component.ZONE_OR_USER));
         } catch (IOException e) {
             e.printStackTrace();
         }

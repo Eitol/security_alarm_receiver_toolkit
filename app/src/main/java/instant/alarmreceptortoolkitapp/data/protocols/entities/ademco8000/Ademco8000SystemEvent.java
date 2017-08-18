@@ -46,16 +46,20 @@ public class Ademco8000SystemEvent extends Event {
         Assert.assertTrue(reqComp.size()<=1);
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
         byte[] code_ = getCode().getCode();
-        byte[] c = getComponent(getRequiredComponents().get(0));
         try {
             outputStream.write(code_);
-            outputStream.write(c);
+            List<Component> rq = getRequiredComponents();
+            if (rq != null && rq.size() > 0){
+                Component component = rq.get(0);
+                byte[] c = getComponentValue(component);
+                outputStream.write(c);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 //        for (int i = 0; i < reqComp.size(); i++) {
-//            byte[] c = getComponent(reqComp.get(i));
+//            byte[] c = getComponentValue(reqComp.get(i));
 //            try {
 //                outputStream.write(c);
 //            } catch (IOException e) {

@@ -24,6 +24,7 @@ public class SimulatorActivity extends AppCompatActivity {
             String protocol = getIntent().getStringExtra(PROTOCOL);
             this.setupProtocolTypeSimulation(protocol);
         }
+
     }
 
     private void setupReceptorTypeSimulation(String receptorModel) {

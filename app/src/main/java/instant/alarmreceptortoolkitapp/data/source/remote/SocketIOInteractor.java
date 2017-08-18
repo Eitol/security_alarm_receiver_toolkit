@@ -62,19 +62,15 @@ public class SocketIOInteractor implements SimulatorContract.Model.Interactor {
 
         socket.on(Socket.EVENT_CONNECT_TIMEOUT, args -> mModel.onServerConnextionFail());
         socket.on(Socket.EVENT_CONNECT_ERROR, args -> mModel.onServerConnextionFail());
+        socket.on(Socket.EVENT_CONNECT,args -> mModel.onServerConnextionSuccess());
 
         socket.connect();
         JSONObject obj = new JSONObject();
-        socket.emit("chat message", "asdasdsad");
         return false;
     }
 
     @Override
-    public void sendSignal(String signal) {
-        if (!this.isFail()) {
-            for (int i = 0; i < 1000; i++) {
-                socket.emit(EVENT_SEND_SIGNAL, String.valueOf(i)+" -> "+signal);
-            }
-        }
+    public void sendSignal(byte[] signal) {
+        socket.emit(EVENT_SEND_SIGNAL, new String(signal));
     }
 }

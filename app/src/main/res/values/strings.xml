@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AlarmReceptorToolkitAPP</string>
+    <string name="app_name">Security alarm receiver toolkit</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -8,6 +8,30 @@
     <string name="p_names_cid">Contact-ID</string>
     <string name="p_names_ademco_express">Ademco Express</string>
     <string name="p_names_dmp">DMP</string>
+    <string name="call">Call</string>
+    <string name="system">System</string>
+    <string name="heart_beat">Heart Beat</string>
+    <string name="make_the_signal">Make the signal</string>
+    <string name="ref">REF</string>
+    <string name="clear">Clear</string>
+    <string name="select_the_fmt">Select the FMT</string>
+    <string name="random">Random</string>
+    <string name="info">INFO</string>
+    <string name="select_the_message_type">Select the message type</string>
+    <string name="line">LINE</string>
+    <string name="account">ACCOUNT</string>
+    <string name="rcvr">RCVR</string>
+    <string name="send">Send</string>
+    <string name="log">Log</string>
+    <string name="signal_frame">signal frame</string>
+    <string name="inset_bad_data">W/Bad Data</string>
+    <string name="insert_caller_info">W/Caller Info</string>
+    <string name="bad_checksum">Bad Checksum</string>
+    <string name="zone_usr">ZONE/USR</string>
+    <string name="partition">PARTITION</string>
+    <string name="bad_data">BAD DATA</string>
+    <string name="w_listen_in">W/Listen In</string>
+    <string name="listen_in_duration">LISTEN IN DURATION</string>
 
     <string-array name="fmt_array">
         <!--<item>004 - SIA DCS</item>-->
@@ -78,249 +102,249 @@
 
     <string-array name="codes_CONTACT_ID">
         <item>Medical - 1100</item>
-        <item>Medical Restauration - 3100</item>
+        <item>Medical Restoration - 3100</item>
         <item>Personal Emergency - 1101</item>
-        <item>Personal Emergency Restauration - 3101</item>
+        <item>Personal Emergency Restoration - 3101</item>
         <item>Fail To Report In - 1102</item>
-        <item>Fail To Report In Restauration - 3102</item>
+        <item>Fail To Report In Restoration - 3102</item>
         <item>Fire - 1110</item>
-        <item>Fire Restauration - 3110</item>
+        <item>Fire Restoration - 3110</item>
         <item>Smoke - 1111</item>
-        <item>Smoke Restauration - 3111</item>
+        <item>Smoke Restoration - 3111</item>
         <item>Combustion - 1112</item>
-        <item>Combustion Restauration - 3112</item>
+        <item>Combustion Restoration - 3112</item>
         <item>Water Flow - 1113</item>
-        <item>Water Flow Restauration - 3113</item>
+        <item>Water Flow Restoration - 3113</item>
         <item>Heat - 1114</item>
-        <item>Heat Restauration - 3114</item>
+        <item>Heat Restoration - 3114</item>
         <item>Pull Station - 1115</item>
-        <item>Pull Station Restauration - 3115</item>
+        <item>Pull Station Restoration - 3115</item>
         <item>Duct - 1116</item>
-        <item>Duct Restauration - 3116</item>
+        <item>Duct Restoration - 3116</item>
         <item>Flame - 1117</item>
-        <item>Flame Restauration - 3117</item>
+        <item>Flame Restoration - 3117</item>
         <item>Near Alarm - 1118</item>
-        <item>Near Alarm Restauration - 3118</item>
+        <item>Near Alarm Restoration - 3118</item>
         <item>Panic - 1120</item>
-        <item>Panic Restauration - 3120</item>
+        <item>Panic Restoration - 3120</item>
         <item>Duress - 1121</item>
-        <item>Duress Restauration - 3121</item>
+        <item>Duress Restoration - 3121</item>
         <item>Silent - 1122</item>
-        <item>Silent Restauration - 3122</item>
+        <item>Silent Restoration - 3122</item>
         <item>Audible - 1123</item>
-        <item>Audible Restauration - 3123</item>
+        <item>Audible Restoration - 3123</item>
         <item>Duress  Access Granted - 1124</item>
-        <item>Duress  Access Granted Restauration - 3124</item>
+        <item>Duress  Access Granted Restoration - 3124</item>
         <item>Duress  Egress Granted - 1125</item>
-        <item>Duress  Egress Granted Restauration - 3125</item>
+        <item>Duress  Egress Granted Restoration - 3125</item>
         <item>Burglary - 1130</item>
-        <item>Burglary Restauration - 3130</item>
+        <item>Burglary Restoration - 3130</item>
         <item>Perimeter - 1131</item>
-        <item>Perimeter Restauration - 3131</item>
+        <item>Perimeter Restoration - 3131</item>
         <item>Interior - 1132</item>
-        <item>Interior Restauration - 3132</item>
+        <item>Interior Restoration - 3132</item>
         <item>24 Hour (Safe) - 1133</item>
-        <item>24 Hour (Safe) Restauration - 3133</item>
+        <item>24 Hour (Safe) Restoration - 3133</item>
         <item>Entry/Exit - 1134</item>
-        <item>Entry/Exit Restauration - 3134</item>
+        <item>Entry/Exit Restoration - 3134</item>
         <item>Day/Night - 1135</item>
-        <item>Day/Night Restauration - 3135</item>
+        <item>Day/Night Restoration - 3135</item>
         <item>Outdoor - 1136</item>
-        <item>Outdoor Restauration - 3136</item>
+        <item>Outdoor Restoration - 3136</item>
         <item>Tamper - 1137</item>
-        <item>Tamper Restauration - 3137</item>
+        <item>Tamper Restoration - 3137</item>
         <item>Near Alarm - 1138</item>
-        <item>Near Alarm Restauration - 3138</item>
+        <item>Near Alarm Restoration - 3138</item>
         <item>Intrusion Verifier - 1139</item>
-        <item>Intrusion Verifier Restauration - 3139</item>
+        <item>Intrusion Verifier Restoration - 3139</item>
         <item>General Alarm - 1140</item>
-        <item>General Alarm Restauration - 3140</item>
+        <item>General Alarm Restoration - 3140</item>
         <item>Polling Loop Open - 1141</item>
-        <item>Polling Loop Open Restauration - 3141</item>
+        <item>Polling Loop Open Restoration - 3141</item>
         <item>Polling Loop Short - 1142</item>
-        <item>Polling Loop Short Restauration - 3142</item>
+        <item>Polling Loop Short Restoration - 3142</item>
         <item>Expansion Module Failure - 1143</item>
-        <item>Expansion Module Failure Restauration - 3143</item>
+        <item>Expansion Module Failure Restoration - 3143</item>
         <item>Sensor Tamper - 1144</item>
-        <item>Sensor Tamper Restauration - 3144</item>
+        <item>Sensor Tamper Restoration - 3144</item>
         <item>Expansion Module Tamper - 1145</item>
-        <item>Expansion Module Tamper Restauration - 3145</item>
+        <item>Expansion Module Tamper Restoration - 3145</item>
         <item>Silent Burglary - 1146</item>
-        <item>Silent Burglary Restauration - 3146</item>
+        <item>Silent Burglary Restoration - 3146</item>
         <item>Sensor Supervision Failure - 1147</item>
-        <item>Sensor Supervision Failure Restauration - 3147</item>
+        <item>Sensor Supervision Failure Restoration - 3147</item>
         <item>24 Hour Non Burglary - 1150</item>
-        <item>24 Hour Non Burglary Restauration - 3150</item>
+        <item>24 Hour Non Burglary Restoration - 3150</item>
         <item>Gas Detected - 1151</item>
-        <item>Gas Detected Restauration - 3151</item>
+        <item>Gas Detected Restoration - 3151</item>
         <item>Refrigeration - 1152</item>
-        <item>Refrigeration Restauration - 3152</item>
+        <item>Refrigeration Restoration - 3152</item>
         <item>Loss of Heat - 1153</item>
-        <item>Loss of Heat Restauration - 3153</item>
+        <item>Loss of Heat Restoration - 3153</item>
         <item>Water Leakage - 1154</item>
-        <item>Water Leakage Restauration - 3154</item>
+        <item>Water Leakage Restoration - 3154</item>
         <item>Foil Break - 1155</item>
-        <item>Foil Break Restauration - 3155</item>
+        <item>Foil Break Restoration - 3155</item>
         <item>Day Trouble - 1156</item>
-        <item>Day Trouble Restauration - 3156</item>
+        <item>Day Trouble Restoration - 3156</item>
         <item>Low Bottled Gas Level - 1157</item>
-        <item>Low Bottled Gas Level Restauration - 3157</item>
+        <item>Low Bottled Gas Level Restoration - 3157</item>
         <item>High Temp - 1158</item>
-        <item>High Temp Restauration - 3158</item>
+        <item>High Temp Restoration - 3158</item>
         <item>Low Temp - 1159</item>
-        <item>Low Temp Restauration - 3159</item>
+        <item>Low Temp Restoration - 3159</item>
         <item>Loss of Air Flow - 1161</item>
-        <item>Loss of Air Flow Restauration - 3161</item>
+        <item>Loss of Air Flow Restoration - 3161</item>
         <item>Carbon Monoxide Detected - 1162</item>
-        <item>Carbon Monoxide Detected Restauration - 3162</item>
+        <item>Carbon Monoxide Detected Restoration - 3162</item>
         <item>Tank Level - 1163</item>
-        <item>Tank Level Restauration - 3163</item>
+        <item>Tank Level Restoration - 3163</item>
         <item>Fire Supervisory - 1200</item>
-        <item>Fire Supervisory Restauration - 3200</item>
+        <item>Fire Supervisory Restoration - 3200</item>
         <item>Low Water Pressure - 1201</item>
-        <item>Low Water Pressure Restauration - 3201</item>
+        <item>Low Water Pressure Restoration - 3201</item>
         <item>Low CO2 - 1202</item>
-        <item>Low CO2 Restauration - 3202</item>
+        <item>Low CO2 Restoration - 3202</item>
         <item>Gate Valve Sensor - 1203</item>
-        <item>Gate Valve Sensor Restauration - 3203</item>
+        <item>Gate Valve Sensor Restoration - 3203</item>
         <item>Low Water Level - 1204</item>
-        <item>Low Water Level Restauration - 3204</item>
+        <item>Low Water Level Restoration - 3204</item>
         <item>Pump Activated - 1205</item>
-        <item>Pump Activated Restauration - 3205</item>
+        <item>Pump Activated Restoration - 3205</item>
         <item>Pump Failure - 1206</item>
-        <item>Pump Failure Restauration - 3206</item>
+        <item>Pump Failure Restoration - 3206</item>
         <item>System Trouble - 1300</item>
-        <item>System Trouble Restauration - 3300</item>
+        <item>System Trouble Restoration - 3300</item>
         <item>AC Loss - 1301</item>
-        <item>AC Loss Restauration - 3301</item>
+        <item>AC Loss Restoration - 3301</item>
         <item>Low System Battery - 1302</item>
-        <item>Low System Battery Restauration - 3302</item>
+        <item>Low System Battery Restoration - 3302</item>
         <item>RAM Checksum Bad - 1303</item>
-        <item>RAM Checksum Bad Restauration - 3303</item>
+        <item>RAM Checksum Bad Restoration - 3303</item>
         <item>ROM Checksum Bad - 1304</item>
-        <item>ROM Checksum Bad Restauration - 3304</item>
+        <item>ROM Checksum Bad Restoration - 3304</item>
         <item>System Reset - 1305</item>
-        <item>System Reset Restauration - 3305</item>
+        <item>System Reset Restoration - 3305</item>
         <item>Panel Programming Changed - 1306</item>
-        <item>Panel Programming Changed Restauration - 3306</item>
+        <item>Panel Programming Changed Restoration - 3306</item>
         <item>Self Test Failure - 1307</item>
-        <item>Self Test Failure Restauration - 3307</item>
+        <item>Self Test Failure Restoration - 3307</item>
         <item>System Shutdown - 1308</item>
-        <item>System Shutdown Restauration - 3308</item>
+        <item>System Shutdown Restoration - 3308</item>
         <item>Battery Test Failure - 1309</item>
-        <item>Battery Test Failure Restauration - 3309</item>
+        <item>Battery Test Failure Restoration - 3309</item>
         <item>Ground Fault Failure - 1310</item>
-        <item>Ground Fault Restauration - 3310</item>
+        <item>Ground Fault Restoration - 3310</item>
         <item>Battery Missing/Dead - 1311</item>
-        <item>Battery Missing/Dead Restauration - 3311</item>
+        <item>Battery Missing/Dead Restoration - 3311</item>
         <item>Power Supply Overcurrent - 1312</item>
-        <item>Power Supply Overcurrent Restauration - 3312</item>
+        <item>Power Supply Overcurrent Restoration - 3312</item>
         <item>Engineer - 1313</item>
-        <item>Engineer Restauration - 3313</item>
+        <item>Engineer Restoration - 3313</item>
         <item>Sounder/Relay - 1320</item>
-        <item>Sounder/Relay Restauration - 3320</item>
+        <item>Sounder/Relay Restoration - 3320</item>
         <item>Bell 1 - 1321</item>
-        <item>Bell 1 Restauration - 3321</item>
+        <item>Bell 1 Restoration - 3321</item>
         <item>Bell 2 - 1322</item>
-        <item>Bell 2 Restauration - 3322</item>
+        <item>Bell 2 Restoration - 3322</item>
         <item>Alarm Relay - 1323</item>
-        <item>Alarm Relay Restauration - 3323</item>
+        <item>Alarm Relay Restoration - 3323</item>
         <item>Trouble Relay - 1324</item>
-        <item>Trouble Relay Restauration - 3324</item>
+        <item>Trouble Relay Restoration - 3324</item>
         <item>Reversing Relay - 1325</item>
-        <item>Reversing Relay Restauration - 3325</item>
+        <item>Reversing Relay Restoration - 3325</item>
         <item>Notification Appliance Ckt. #3 - 1326</item>
-        <item>Notification Appliance Ckt. #3 Restauration - 3326</item>
+        <item>Notification Appliance Ckt. #3 Restoration - 3326</item>
         <item>Notification Appliance Ckt. #4 - 1327</item>
-        <item>Notification Appliance Ckt. #4 Restauration - 3327</item>
+        <item>Notification Appliance Ckt. #4 Restoration - 3327</item>
         <item>System Peripheral Trouble - 1330</item>
-        <item>System Peripheral Trouble Restauration - 3330</item>
+        <item>System Peripheral Trouble Restoration - 3330</item>
         <item>Polling Loop Open - 1331</item>
-        <item>Polling Loop Open Restauration - 3331</item>
+        <item>Polling Loop Open Restoration - 3331</item>
         <item>Polling Loop Short - 1332</item>
-        <item>Polling Loop Short Restauration - 3332</item>
+        <item>Polling Loop Short Restoration - 3332</item>
         <item>Expansion Module Failure - 1333</item>
-        <item>Expansion Module Failure Restauration - 3333</item>
+        <item>Expansion Module Failure Restoration - 3333</item>
         <item>Repeater Failure - 1334</item>
-        <item>Repeater Failure Restauration - 3334</item>
+        <item>Repeater Failure Restoration - 3334</item>
         <item>Local Printer Out of Paper - 1335</item>
-        <item>Local Printer Out of Paper Restauration - 3335</item>
+        <item>Local Printer Out of Paper Restoration - 3335</item>
         <item>Local Printer Failure - 1336</item>
-        <item>Local Printer Failure Restauration - 3336</item>
+        <item>Local Printer Failure Restoration - 3336</item>
         <item>Exp. Module DC Loss - 1337</item>
-        <item>Exp. Module DC Loss Restauration - 3337</item>
+        <item>Exp. Module DC Loss Restoration - 3337</item>
         <item>Exp. Module Low Batt. - 1338</item>
-        <item>Exp. Module Low Batt. Restauration - 3338</item>
+        <item>Exp. Module Low Batt. Restoration - 3338</item>
         <item>Exp. Module Reset - 1339</item>
-        <item>Exp. Module Reset Restauration - 3339</item>
+        <item>Exp. Module Reset Restoration - 3339</item>
         <item>Exp. Module Tamper - 1341</item>
-        <item>Exp. Module Tamper Restauration - 3341</item>
+        <item>Exp. Module Tamper Restoration - 3341</item>
         <item>Exp. Module AC Loss - 1342</item>
-        <item>Exp. Module AC Loss Restauration - 3342</item>
+        <item>Exp. Module AC Loss Restoration - 3342</item>
         <item>Exp. Module Self Test Fail - 1343</item>
-        <item>Exp. Module Self Test Fail Restauration - 3343</item>
+        <item>Exp. Module Self Test Fail Restoration - 3343</item>
         <item>RF Receiver Jam Detect - 1344</item>
-        <item>RF Receiver Jam Detect Restauration - 3344</item>
+        <item>RF Receiver Jam Detect Restoration - 3344</item>
         <item>Communication Trouble - 1350</item>
-        <item>Communication Trouble Restauration - 3350</item>
+        <item>Communication Trouble Restoration - 3350</item>
         <item>Telco 1 Fault - 1351</item>
-        <item>Telco 1 Fault Restauration - 3351</item>
+        <item>Telco 1 Fault Restoration - 3351</item>
         <item>Telco 2 Fault - 1352</item>
-        <item>Telco 2 Fault Restauration - 3352</item>
+        <item>Telco 2 Fault Restoration - 3352</item>
         <item>Long Range Radio Xmitter Fault - 1353</item>
-        <item>Long Range Radio Xmitter Fault Restauration - 3353</item>
+        <item>Long Range Radio Xmitter Fault Restoration - 3353</item>
         <item>Failure to Communicate Event - 1354</item>
-        <item>Failure to Communicate Event Restauration - 3354</item>
+        <item>Failure to Communicate Event Restoration - 3354</item>
         <item>Loss of Radio Supervision - 1355</item>
-        <item>Loss of Radio Supervision Restauration - 3355</item>
+        <item>Loss of Radio Supervision Restoration - 3355</item>
         <item>Loss of Central Polling - 1356</item>
-        <item>Loss of Central Polling Restauration - 3356</item>
+        <item>Loss of Central Polling Restoration - 3356</item>
         <item>Long Range Radio VSWR Problem - 1357</item>
-        <item>Long Range Radio VSWR Problem Restauration - 3357</item>
+        <item>Long Range Radio VSWR Problem Restoration - 3357</item>
         <item>Protection Loop - 1370</item>
-        <item>Protection Loop Restauration - 3370</item>
+        <item>Protection Loop Restoration - 3370</item>
         <item>Protection Loop Open - 1371</item>
-        <item>Protection Loop Open Restauration - 3371</item>
+        <item>Protection Loop Open Restoration - 3371</item>
         <item>Protection Loop Short - 1372</item>
-        <item>Protection Loop Short Restauration - 3372</item>
+        <item>Protection Loop Short Restoration - 3372</item>
         <item>Fire Trouble - 1373</item>
-        <item>Fire Trouble Restauration - 3373</item>
+        <item>Fire Trouble Restoration - 3373</item>
         <item>Exit Error Alarm (zone) - 1374</item>
-        <item>Exit Error Alarm (zone) Restauration - 3374</item>
+        <item>Exit Error Alarm (zone) Restoration - 3374</item>
         <item>Panic Zone Trouble - 1375</item>
-        <item>Panic Zone Trouble Restauration - 3375</item>
+        <item>Panic Zone Trouble Restoration - 3375</item>
         <item>Hold Up Zone Trouble - 1376</item>
-        <item>Hold Up Zone Trouble Restauration - 3376</item>
+        <item>Hold Up Zone Trouble Restoration - 3376</item>
         <item>Swinger Trouble - 1377</item>
-        <item>Swinger Trouble Restauration - 3377</item>
+        <item>Swinger Trouble Restoration - 3377</item>
         <item>Cross Zone Trouble - 1378</item>
-        <item>Cross Zone Trouble Restauration - 3378</item>
+        <item>Cross Zone Trouble Restoration - 3378</item>
         <item>Sensor Trouble - 1380</item>
-        <item>Sensor Trouble Restauration - 3380</item>
+        <item>Sensor Trouble Restoration - 3380</item>
         <item>Loss of Supervision  RF - 1381</item>
-        <item>Loss of Supervision  RF Restauration - 3381</item>
+        <item>Loss of Supervision  RF Restoration - 3381</item>
         <item>Loss of Supervision  RPM - 1382</item>
-        <item>Loss of Supervision  RPM Restauration - 3382</item>
+        <item>Loss of Supervision  RPM Restoration - 3382</item>
         <item>Sensor Tamper - 1383</item>
-        <item>Sensor Tamper Restauration - 3383</item>
+        <item>Sensor Tamper Restoration - 3383</item>
         <item>RF Low Battery - 1384</item>
-        <item>RF Low Battery Restauration - 3384</item>
+        <item>RF Low Battery Restoration - 3384</item>
         <item>Smoke Detector Hi Sensitivity - 1385</item>
-        <item>Smoke Detector Hi Sensitivity Restauration - 3385</item>
+        <item>Smoke Detector Hi Sensitivity Restoration - 3385</item>
         <item>Smoke Detector Low Sensitivity - 1386</item>
-        <item>Smoke Detector Low Sensitivity Restauration - 3386</item>
+        <item>Smoke Detector Low Sensitivity Restoration - 3386</item>
         <item>Intrusion Detector Hi Sensitivity - 1387</item>
-        <item>Intrusion Detector Hi Sensitivity Restauration - 3387</item>
+        <item>Intrusion Detector Hi Sensitivity Restoration - 3387</item>
         <item>Intrusion Detector Low Sensitivity - 1388</item>
-        <item>Intrusion Detector Low Sensitivity Restauration - 3388</item>
+        <item>Intrusion Detector Low Sensitivity Restoration - 3388</item>
         <item>Sensor Self Test Failure - 1389</item>
-        <item>Sensor Self Test Failure Restauration - 3389</item>
+        <item>Sensor Self Test Failure Restoration - 3389</item>
         <item>Sensor Watch Trouble - 1391</item>
-        <item>Sensor Watch Trouble Restauration - 3391</item>
+        <item>Sensor Watch Trouble Restoration - 3391</item>
         <item>Drift Compensation Error - 1392</item>
-        <item>Drift Compensation Error Restauration - 3392</item>
+        <item>Drift Compensation Error Restoration - 3392</item>
         <item>Maintenance Alert - 1393</item>
-        <item>Maintenance Alert Restauration - 3393</item>
+        <item>Maintenance Alert Restoration - 3393</item>
         <item>Open - 1400</item>
         <item>Close - 3400</item>
         <item>Open by User - 1401</item>
@@ -399,85 +423,85 @@
         <item>Access Point UnBypass - 3577</item>
         <item>Manual Trigger Test Report - 1601</item>
         <item>Periodic Test Report - 1602</item>
-        <item>Hold up suspicion print Restauration - 3126</item>
-        <item>Panic Verifier Restauration - 3129</item>
-        <item>High Humidity Restauration - 3168</item>
-        <item>Low Humidity Restauration - 3169</item>
-        <item>Primary Power Supply Failure Restauration - 3314</item>
-        <item>System Tamper Restauration - 3316</item>
-        <item>AES Encryption disabled/ enabled Restauration - 3345</item>
+        <item>Hold up suspicion print Restoration - 3126</item>
+        <item>Panic Verifier Restoration - 3129</item>
+        <item>High Humidity Restoration - 3168</item>
+        <item>Low Humidity Restoration - 3169</item>
+        <item>Primary Power Supply Failure Restoration - 3314</item>
+        <item>System Tamper Restoration - 3316</item>
+        <item>AES Encryption disabled/ enabled Restoration - 3345</item>
         <item>Periodic Comm Test Fail /Restore - 1358</item>
-        <item>CO Detector needs replacement Restauration - 3394</item>
-        <item>Armed with System Trouble Override Restauration - 3443</item>
-        <item>Exit Error (user) Restauration - 3457</item>
-        <item>User on Premises Restauration - 3458</item>
+        <item>CO Detector needs replacement Restoration - 3394</item>
+        <item>Armed with System Trouble Override Restoration - 3443</item>
+        <item>Exit Error (user) Restoration - 3457</item>
+        <item>User on Premises Restoration - 3458</item>
         <item>Wrong Code Entry - 1461</item>
-        <item>Wrong Code Entry Restauration - 3461</item>
+        <item>Wrong Code Entry Restoration - 3461</item>
         <item>Legal Code Entry - 1462</item>
-        <item>Legal Code Entry Restauration - 3462</item>
-        <item>Re arm after Alarm Restauration - 3463</item>
-        <item>Auto arm Time Extended Restauration - 3464</item>
-        <item>Panic Alarm Reset Restauration - 3465</item>
-        <item>Service On/Off Premises Restauration - 3466</item>
-        <item>System shutdown command received Restauration - 3414</item>
-        <item>Dialer shutdown command received Restauration - 3415</item>
+        <item>Legal Code Entry Restoration - 3462</item>
+        <item>Re arm after Alarm Restoration - 3463</item>
+        <item>Auto arm Time Extended Restoration - 3464</item>
+        <item>Panic Alarm Reset Restoration - 3465</item>
+        <item>Service On/Off Premises Restoration - 3466</item>
+        <item>System shutdown command received Restoration - 3414</item>
+        <item>Dialer shutdown command received Restoration - 3415</item>
         <item>Access denied - 1421</item>
         <item>Access report by user - 1422</item>
         <item>Forced Access - 1423</item>
-        <item>Forced Access Restauration - 3423</item>
+        <item>Forced Access Restoration - 3423</item>
         <item>Egress Denied - 1424</item>
         <item>Egress Granted - 1425</item>
         <item>Access Door propped open - 1426</item>
-        <item>Access Door propped open Restauration - 3426</item>
+        <item>Access Door propped open Restoration - 3426</item>
         <item>Access point Door Status Monitor trouble - 1427</item>
-        <item>Access point Door Status Monitor trouble Restauration - 3427</item>
+        <item>Access point Door Status Monitor trouble Restoration - 3427</item>
         <item>Access point Request To Exit trouble - 1428</item>
-        <item>Access point Request To Exit trouble Restauration - 3428</item>
+        <item>Access point Request To Exit trouble Restoration - 3428</item>
         <item>Access program mode entry - 1429</item>
         <item>Access program mode exit - 1430</item>
         <item>Access threat level change - 1431</item>
-        <item>Access threat level change Restauration - 3431</item>
+        <item>Access threat level change Restoration - 3431</item>
         <item>Access relay/trigger fail - 1432</item>
-        <item>Access relay/trigger fail Restauration - 3432</item>
+        <item>Access relay/trigger fail Restoration - 3432</item>
         <item>Access RTE shunt - 1433</item>
-        <item>Access RTE shunt Restauration - 3433</item>
+        <item>Access RTE shunt Restoration - 3433</item>
         <item>Access DSM shunt - 1434</item>
-        <item>Access DSM shunt Restauration - 3434</item>
+        <item>Access DSM shunt Restoration - 3434</item>
         <item>Second Person Access - 1435</item>
-        <item>Second Person Access Restauration - 3435</item>
+        <item>Second Person Access Restoration - 3435</item>
         <item>Irregular Access - 1436</item>
-        <item>Irregular Access Restauration - 3436</item>
-        <item>Vault Bypass Restauration - 3578</item>
-        <item>Vent Zone Bypass Restauration - 3579</item>
-        <item>Fire test Restauration - 3604</item>
-        <item>Status report to follow Restauration - 3605</item>
-        <item>Walk test mode Restauration - 3607</item>
-        <item>Service Request Restauration - 3616</item>
+        <item>Irregular Access Restoration - 3436</item>
+        <item>Vault Bypass Restoration - 3578</item>
+        <item>Vent Zone Bypass Restoration - 3579</item>
+        <item>Fire test Restoration - 3604</item>
+        <item>Status report to follow Restoration - 3605</item>
+        <item>Walk test mode Restoration - 3607</item>
+        <item>Service Request Restoration - 3616</item>
         <item>Access schedule change - 1632</item>
-        <item>Senior Watch Trouble Restauration - 3641</item>
-        <item>Latch key Supervision Restauration - 3642</item>
-        <item>Reserved for Ademco Use Restauration - 3651</item>
-        <item>Reserved for Ademco Use Restauration - 3652</item>
-        <item>Reserved for Ademco Use Restauration - 3653</item>
-        <item>System Inactivity Restauration - 3654</item>
-        <item>User Code X modified by Installer Restauration - 3655</item>
-        <item>Auxiliary #3 Restauration - 3703</item>
+        <item>Senior Watch Trouble Restoration - 3641</item>
+        <item>Latch key Supervision Restoration - 3642</item>
+        <item>Reserved for Ademco Use Restoration - 3651</item>
+        <item>Reserved for Ademco Use Restoration - 3652</item>
+        <item>Reserved for Ademco Use Restoration - 3653</item>
+        <item>System Inactivity Restoration - 3654</item>
+        <item>User Code X modified by Installer Restoration - 3655</item>
+        <item>Auxiliary #3 Restoration - 3703</item>
         <item>Installer Test - 1704</item>
-        <item>Installer Test Restauration - 3704</item>
-        <item>Unable to output signal (Derived Channel) Restauration - 3796</item>
+        <item>Installer Test Restoration - 3704</item>
+        <item>Unable to output signal (Derived Channel) Restoration - 3796</item>
         <item>Test – Cell Backup - 1076</item>
         <item>Test/Misc - 1103</item>
         <item>DSC CID RESTORE - 1104</item>
         <item>Test/Misc - 1105</item>
         <item>ABORT - 1106</item>
         <item>Tamper - 1109</item>
-        <item>Tamper Restauration - 3109</item>
+        <item>Tamper Restoration - 3109</item>
         <item>Test/Misc - 111F</item>
         <item>Test/Misc - 113E</item>
         <item>AES IP Link Door Tamper - 1145906</item>
-        <item>AES IP Link Door Tamper Restauration - 3145906</item>
+        <item>AES IP Link Door Tamper Restoration - 3145906</item>
         <item>After alarm open - 1199</item>
-        <item>After alarm open Restauration - 3199</item>
+        <item>After alarm open Restoration - 3199</item>
         <item>Test/Misc - 11B0</item>
         <item>Test/Misc - 11BC</item>
         <item>Test/Misc - 11C1</item>
@@ -487,94 +511,94 @@
         <item>Test/Misc - 11DD</item>
         <item>Test/Misc - 11EE</item>
         <item>Supervisory - 1210</item>
-        <item>Supervisory Restauration - 3210</item>
+        <item>Supervisory Restoration - 3210</item>
         <item>SPRINKLER TROUBLE - 1213</item>
-        <item>SPRINKLER TROUBLE Restauration - 3213</item>
+        <item>SPRINKLER TROUBLE Restoration - 3213</item>
         <item>General Alarm - 1271</item>
-        <item>General Alarm Restauration - 3271</item>
+        <item>General Alarm Restoration - 3271</item>
         <item>AES IP Link AC Failure - 1301912</item>
-        <item>AES IP Link AC Failure Restauration - 3301912</item>
+        <item>AES IP Link AC Failure Restoration - 3301912</item>
         <item>AES IP Link Low Battery - 1302911</item>
-        <item>AES IP Link Low Battery Restauration - 3302911</item>
+        <item>AES IP Link Low Battery Restoration - 3302911</item>
         <item>AES Radio Manual Reset - 1305901</item>
-        <item>AES Radio Manual Reset Restauration - 3305901</item>
+        <item>AES Radio Manual Reset Restoration - 3305901</item>
         <item>AES Radio Power On Reset - 1305902</item>
-        <item>AES Radio Power On Reset Restauration - 3305902</item>
+        <item>AES Radio Power On Reset Restoration - 3305902</item>
         <item>AES Radio All OK - 1307800</item>
-        <item>AES Radio All OK Restauration - 3307800</item>
+        <item>AES Radio All OK Restoration - 3307800</item>
         <item>AES Radio Low Battery - 1307801</item>
-        <item>AES Radio Low Battery Restauration - 3307801</item>
+        <item>AES Radio Low Battery Restoration - 3307801</item>
         <item>RAM Data Error/Corrupt - 1307802</item>
-        <item>RAM Data Error/Corrupt Restauration - 3307802</item>
+        <item>RAM Data Error/Corrupt Restoration - 3307802</item>
         <item>U11 RAM Chip Battery Bad - 1307803</item>
-        <item>U11 RAM Chip Battery Bad Restauration - 3307803</item>
+        <item>U11 RAM Chip Battery Bad Restoration - 3307803</item>
         <item>AES Radio A to D Converter Faulted - 1307804</item>
-        <item>AES Radio A to D Converter Faulted Restauration - 3307804</item>
+        <item>AES Radio A to D Converter Faulted Restoration - 3307804</item>
         <item>Modem Chip Failed or missing - 1307805</item>
-        <item>Modem Chip Failed or missing Restauration - 3307805</item>
+        <item>Modem Chip Failed or missing Restoration - 3307805</item>
         <item>Timing Error btwn CPU and Modem - 1307806</item>
-        <item>Timing Error btwn CPU and Modem Restauration - 3307806</item>
+        <item>Timing Error btwn CPU and Modem Restoration - 3307806</item>
         <item>Ram Chip Read/Write test Failure - 1307807</item>
-        <item>Ram Chip Read/Write test Failure Restauration - 3307807</item>
+        <item>Ram Chip Read/Write test Failure Restoration - 3307807</item>
         <item>AES RAdio Modem Loopback Failed - 1307808</item>
-        <item>AES RAdio Modem Loopback Failed Restauration - 3307808</item>
+        <item>AES RAdio Modem Loopback Failed Restoration - 3307808</item>
         <item>AES Radio AC Fail or DC voltage LOW - 1307809</item>
-        <item>AES Radio AC Fail or DC voltage LOW Restauration - 3307809</item>
+        <item>AES Radio AC Fail or DC voltage LOW Restoration - 3307809</item>
         <item>AES Radio Battery Low - 1309910</item>
-        <item>AES Radio Battery Low Restauration - 3309910</item>
+        <item>AES Radio Battery Low Restoration - 3309910</item>
         <item>Trouble - 1315</item>
-        <item>Trouble Restauration - 3315</item>
+        <item>Trouble Restoration - 3315</item>
         <item>SIGNAL SILENCED - 1328</item>
-        <item>SIGNAL SILENCED Restauration - 3328</item>
+        <item>SIGNAL SILENCED Restoration - 3328</item>
         <item>SYSTEM PERIPHERAL - 1340</item>
-        <item>SYSTEM PERIPHERAL Restauration - 3340</item>
+        <item>SYSTEM PERIPHERAL Restoration - 3340</item>
         <item>Primary Comm Path Failure - 1350951</item>
-        <item>Primary Comm Path Failure Restauration - 3350951</item>
+        <item>Primary Comm Path Failure Restoration - 3350951</item>
         <item>Secondary Comm Path Failure - 1350952</item>
-        <item>Secondary Comm Path Failure Restauration - 3350952</item>
+        <item>Secondary Comm Path Failure Restoration - 3350952</item>
         <item>AES IP Link UnitID Conflict - 1353906</item>
-        <item>AES IP Link UnitID Conflict Restauration - 3353906</item>
+        <item>AES IP Link UnitID Conflict Restoration - 3353906</item>
         <item>AES IP Link IP Checkin Failure - 1354906</item>
-        <item>AES IP Link IP Checkin Failure Restauration - 3354906</item>
+        <item>AES IP Link IP Checkin Failure Restoration - 3354906</item>
         <item>AES MultiNet Modem Failure - 1354907</item>
-        <item>AES MultiNet Modem Failure Restauration - 3354907</item>
+        <item>AES MultiNet Modem Failure Restoration - 3354907</item>
         <item>AES IP Link Modem Failure - 1354908</item>
-        <item>AES IP Link Modem Failure Restauration - 3354908</item>
+        <item>AES IP Link Modem Failure Restoration - 3354908</item>
         <item>AES RADIO DIAGNOSTICS FAILED - 1354915</item>
-        <item>AES RADIO DIAGNOSTICS FAILED Restauration - 3354915</item>
+        <item>AES RADIO DIAGNOSTICS FAILED Restoration - 3354915</item>
         <item>AES IP Link RF Ping Failure - 1355906</item>
-        <item>AES IP Link RF Ping Failure Restauration - 3355906</item>
+        <item>AES IP Link RF Ping Failure Restoration - 3355906</item>
         <item>AES Radio Comm Failure - 1356903</item>
-        <item>AES Radio Comm Failure Restauration - 3356903</item>
+        <item>AES Radio Comm Failure Restoration - 3356903</item>
         <item>TELCO FAULT - 1361</item>
-        <item>TELCO FAULT Restauration - 3361</item>
+        <item>TELCO FAULT Restoration - 3361</item>
         <item>TELCO 2 FAULT - 1362</item>
-        <item>TELCO 2 FAULT Restauration - 3362</item>
+        <item>TELCO 2 FAULT Restoration - 3362</item>
         <item>AES Radio Failure - 1365903</item>
-        <item>AES Radio Failure Restauration - 3365903</item>
+        <item>AES Radio Failure Restoration - 3365903</item>
         <item>AES Radio Battery Charger Failure - 1370009</item>
-        <item>AES Radio Battery Charger Failure Restauration - 3370009</item>
+        <item>AES Radio Battery Charger Failure Restoration - 3370009</item>
         <item>AES Radio Ground Fault - 1370010</item>
-        <item>AES Radio Ground Fault Restauration - 3370010</item>
+        <item>AES Radio Ground Fault Restoration - 3370010</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 1379</item>
-        <item>UNDEFINED DSC CONTACT ID CODE Restauration - 3379</item>
+        <item>UNDEFINED DSC CONTACT ID CODE Restoration - 3379</item>
         <item>Trouble - 1399</item>
-        <item>Trouble Restauration - 3399</item>
+        <item>Trouble Restoration - 3399</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 13F0</item>
-        <item>UNDEFINED DSC CONTACT ID CODE Restauration - 33F0</item>
+        <item>UNDEFINED DSC CONTACT ID CODE Restoration - 33F0</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 13F1</item>
         <item>OPEN - 1410</item>
         <item>PARTIAL CLOSE - 1440</item>
-        <item>PARTIAL CLOSE Restauration - 3440</item>
+        <item>PARTIAL CLOSE Restoration - 3440</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 1460</item>
-        <item>UNDEFINED DSC CONTACT ID CODE Restauration - 3460</item>
+        <item>UNDEFINED DSC CONTACT ID CODE Restoration - 3460</item>
         <item>PARTIAL CLOSE - 1470</item>
-        <item>PARTIAL CLOSE Restauration - 3470</item>
+        <item>PARTIAL CLOSE Restoration - 3470</item>
         <item>KEY SWITCH - 1474</item>
-        <item>KEY SWITCH Restauration - 3474</item>
+        <item>KEY SWITCH Restoration - 3474</item>
         <item>OPEN - 1481</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 1482</item>
-        <item>UNDEFINED DSC CONTACT ID CODE Restauration - 3482</item>
+        <item>UNDEFINED DSC CONTACT ID CODE Restoration - 3482</item>
         <item>CLOSE - 1491</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 14B1</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 14B9</item>
@@ -593,17 +617,17 @@
         <item>Test/Misc. - 1699</item>
         <item>UNDEFINED DSC CONTACT ID CODE - 16EE</item>
         <item>Burg – Crash and Smash - 1777</item>
-        <item>Burg – Crash and Smash Restauration - 3777</item>
+        <item>Burg – Crash and Smash Restoration - 3777</item>
         <item>Test - 1900</item>
         <item>FIRE ALARM SILENCE - 1912</item>
-        <item>FIRE ALARM SILENCE Restauration - 3912</item>
+        <item>FIRE ALARM SILENCE Restoration - 3912</item>
         <item>NON CRITICAL RECEIVER MESSAGE - 1995</item>
         <item>DISK SPACE LOW - 1996</item>
-        <item>DISK SPACE LOW Restauration - 3996</item>
+        <item>DISK SPACE LOW Restoration - 3996</item>
         <item>RECEIVER MESSAGE - 1997</item>
         <item>UNKNOWN SIGNAL - 1998</item>
         <item>General Alarm - 1999</item>
-        <item>General Alarm Restauration - 3999</item>
+        <item>General Alarm Restoration - 3999</item>
         <item>name - code</item>
         <item>Hold up suspicion print - 1126</item>
         <item>Panic Verifier - 1129</item>
@@ -659,8 +683,45 @@
         <item>Reserved for Ademco Use - 1653</item>
         <item>System Inactivity - 1654</item>
         <item>User Code X modified by Installer - 1655</item>
-        <item>Auxiliary #3 - 1703</item>
-        <item>Unable to output signal (Derived Channel) - 1796</item>
+        <item>Auxiliary 3 - 1703</item>
+        <item>Unable to output signal (Derived  Channel) - 1796</item>
+    </string-array>
+
+    <string-array name="codes_SYSTEM_ADEMCO8000">
+        <item>Common Listen-in Begin - A (0x41)</item>
+        <item>Common Listen-in End - B (0x42)</item>
+        <item>Common Listen-in Extended - C (0x43)</item>
+        <item>PBX Listen-in Begin - D (0x44)</item>
+        <item>PBX Listen-in Busy - E (0x45)</item>
+        <item>Manually Aborted Call - F (0x46)</item>
+        <item>System Power Up - a (0x61)</item>
+        <item>Local Program Begin - b (0x62)</item>
+        <item>Local Program End - c (0x63)</item>
+        <item>Local Program Fail - d (0x64)</item>
+        <item>System Date Change - e (0x65)</item>
+        <item>System Time Change - f (0x66)</item>
+        <item>Message Queue Above Warning - g (0x67)</item>
+        <item>Message Queue Below Warning - h (0x68)</item>
+        <item>Message Queue Full - i (0x69)</item>
+        <item>Message Queue Full Restore - j (0x6A)</item>
+        <item>Printer Off Line - k (0x6B)</item>
+        <item>Printer Paper Out - l (0x6B)</item>
+        <item>Printer Restore - m (0x6B)</item>
+        <item>LinePort or Slave Added - n (0x6E)</item>
+        <item>LinePort or Slave Deleted - o (0x6F)</item>
+        <item>LinePort or Slave Trouble - p (0x70)</item>
+        <item>Phone Line Trouble - q (0x71)</item>
+        <item>LinePort or Slave Trouble Restore - r (0x72)</item>
+        <item>Phone Line Restore - s (0x73)</item>
+        <item>Line Card Modified - t (0x74)</item>
+        <item>AC Lost - w (0x77)</item>
+        <item>AC Restore - x (0x78)</item>
+        <item>Battery/DC Trouble - y (0x79)</item>
+        <item>Battery/DC Trouble Restore - z (0x7A)</item>
+        <item>Computer Trouble - { (0x7B)</item>
+        <item>Computer Restore - } (0x7D)</item>
+        <item>Log Off Operator - ~ (0x7E)</item>
+        <item>Log On Operator - DEL (0x7F)</item>
     </string-array>
 
     <string-array name="codes_SIA">
@@ -820,8 +881,8 @@
         <item>Freeze Supervisory - ZS</item>
         <item>Freeze Trouble - ZT</item>
         <item>Freeze UnByPass - ZU</item>
-        <item>name Restauration - code</item>
-        <item>Perimeter Armed Restauration - NM</item>
+        <item>name Restoration - code</item>
+        <item>Perimeter Armed Restoration - NM</item>
         <item>Alarm Panel Substitution - AA</item>
         <item>Unverified Event - Burglary - BG</item>
         <item>Burglary Alarm - Cross Point - BM</item>

@@ -36,8 +36,8 @@ public abstract class Event {
      */
     public boolean isReadyForBuild() {
         List<Component> requiredComponents = getRequiredComponents();
-        if (requiredComponents.size() == 0){
-            return false;
+        if (requiredComponents == null || requiredComponents.size() == 0){
+            return true;
         }
         for (Component c: requiredComponents) {
             if (!mComponents.containsKey(c)){
@@ -73,7 +73,7 @@ public abstract class Event {
     }
 
 
-    public byte[] getComponent(Component c) {
+    public byte[] getComponentValue(Component c) {
         return mComponents.get(c).getBytes();
     }
 

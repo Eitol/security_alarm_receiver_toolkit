@@ -31,14 +31,18 @@ public interface SimulatorContract {
         String getPartition();
         String getProtocolName();
         String getBadData();
+        String getListenInDuration();
 
         boolean insertBadData();
         boolean insertCallerInfo();
-        boolean insetBadChecksum();
+        boolean insertBadChecksum();
+        boolean insertListenIn();
 
         void setCodesByMsgType();
         int getCodeListSize();
         MsgType getMsgType();
+
+        void loadInfoView(String protocolOrReceiverName);
     }
 
     interface Present extends BasePresenter {

@@ -3,7 +3,6 @@ package instant.alarmreceptortoolkitapp.data.protocols.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +21,7 @@ public abstract class Signal implements Frame {
     private List<Event> mEvents = new ArrayList<>();
     public static int MSG_REF_COUNTER = 0;
     public static int MSG_ID_COUNTER = 0;
+    private boolean _isBuildWithBadChecksum = false;
 
     /**
      * Should return the required field for build the signal by the msg type
@@ -70,13 +70,13 @@ public abstract class Signal implements Frame {
         if (expectedLen != value.length()) {
             // TODO: Print bad size
         }
-        if (name == Component.FMT){
+        if (name == Component.FMT) {
             value = standarizeFMT(value);
         }
         mProperties.put(name, value);
     }
 
-    public String standarizeFMT(String fmt){
+    public String standarizeFMT(String fmt) {
         return fmt.split(" - ")[0];
     }
 
@@ -93,15 +93,6 @@ public abstract class Signal implements Frame {
         return mProperties.get(key);
     }
 
-    /**
-     * Add properties from a map
-     *
-     * @param map e.g "{ "code": "E101", "protocol": "CONTACT_ID" }
-     */
-
-    public void fromMap(Map<Component, String> map) {
-        this.mProperties.putAll(map);
-    }
 
     /**
      * Validate if the signal is prepared for build.
@@ -118,6 +109,15 @@ public abstract class Signal implements Frame {
                 }
             }
         return true;
+    }
+
+    /**
+     * Add properties from a map
+     *
+     * @param map e.g "{ "code": "E101", "protocol": "CONTACT_ID" }
+     */
+    public void fromMap(Map<Component, String> map) {
+        this.mProperties.putAll(map);
     }
 
     /**
@@ -159,41 +159,28 @@ public abstract class Signal implements Frame {
     }
 
     /**
-     * Get the validation byte (V-Byte or Error-check byte)
+     * Get the validation byte (V-Byte or Error-check byte).
      *
-     * @param msg:    The msg up to and including the byte preceding the validation byte.
-     * @param hasBOM: Indicate with the msg contains an Beginning of Message (BOM)
-     * @return The byte V-Byte.
-     * <p>
-     * Note: If the msg contains the BOM this must be removed.
-     * E.g: For ademco mx8000 usualy the BOM is '5', then some msg looks like this:
-     * 5070211"083503"01"9956"r10y
-     * But the first byte must be removed:
-     * 070211"083503"01"9956"r10y
-     * <p>
-     * This algorithm is based on the official document of Silent Knight 9000 Protocol
-     * and Ademco8000
-     * Link: https://www.silentknight.com/documentation/Documents/151059.pdf (view 8.2.6)
+     * If the makeBadVByte is setted then make bad VByte.
      */
     public byte makeVByte(byte[] msg, boolean hasBOM) {
-        if (hasBOM) {
-            msg = Arrays.copyOfRange(msg, 1, msg.length);
+        if (this.isBuildWithBadChecksum()){
+            return makeBadVByte(msg, hasBOM);
         }
+        return makeGoodVByte(msg, hasBOM);
+    }
 
-        // 1- Set the V-Byte comparison byte to zero
-        byte vbyte = 0x00;
+    /**
+     * Make good V-Byte
+     */
+    public abstract byte makeGoodVByte(byte[] msg, boolean hasBOM);
 
-        for (int i = 0; i < msg.length; i++) {
-            // 2- Add the first (or next) byte of the message to the V-Byte comparison byte
-            vbyte += msg[i];
-
-            // 3- Clear bit 7 of the V-Byte comparison byte.
-            vbyte &= ~(1 << 7);
-
-            // 4- Set bit 6 of the V-Byte comparison byte
-            vbyte |= 1 << 6;
+    public byte makeBadVByte(byte[] msg, boolean hasBOM) {
+        byte _byte = makeGoodVByte(msg, hasBOM);
+        if (_byte == 0x58){
+            return (byte)0x78;
         }
-        return vbyte;
+        return (byte)0x58;
     }
 
 
@@ -220,6 +207,22 @@ public abstract class Signal implements Frame {
             return getProperties().get(field);
         }
         return new SimpleDateFormat(format, Locale.getDefault()).format(new Date());
+    }
+
+    public boolean isBuildWithBadChecksum() {
+        return this._isBuildWithBadChecksum;
+    }
+
+    /**
+     * Force to build signal with wrong checksum
+     * <p>
+     * In the moment of build, the generator select some alatory byte,
+     * different from the true checksum.
+     *
+     * @param value If value is True then this option is enabled
+     */
+    public void setBuildWithBadChecksum(boolean value) {
+        this._isBuildWithBadChecksum = value;
     }
 
 }

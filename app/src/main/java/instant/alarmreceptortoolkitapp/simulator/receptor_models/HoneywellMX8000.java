@@ -1,8 +1,12 @@
 package instant.alarmreceptortoolkitapp.simulator.receptor_models;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,7 @@ import butterknife.OnClick;
 import instant.alarmreceptortoolkitapp.R;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.MsgType;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000Protocol;
+import instant.alarmreceptortoolkitapp.global.activities.InfoActivity;
 import instant.alarmreceptortoolkitapp.simulator.SimulatorContract;
 
 
@@ -38,7 +43,14 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_honeywell_mx8000, container, false);
         ButterKnife.bind(this, view);
+        log.setMovementMethod(new ScrollingMovementMethod());
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
     }
 
     @Override
@@ -46,20 +58,52 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
         this.mPresenter = presenter;
     }
 
-    @Override
-    public void addToLog(String s) {
-        this.log.setText(this.log.getText() + "\n" + s);
-    }
+
 
     @Override
     public void clearLog() {
+        receptor.setText("");
+        line.setText("");
+        account.setText("");
+        ref.setText("");
+        zoneUsr.setText("");
+        partition.setText("");
+        badDataText.setText("");
+        listenInDuration.setText("");
         this.log.setText("");
     }
 
     @Override
+    public void addToLog(String s) {
+        getActivity().runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        // Scroll to the end
+                        if(log != null){
+                            log.append(s + "\n");
+                            final Layout layout = log.getLayout();
+                            if(layout != null){
+                                int scrollDelta = layout.getLineBottom(log.getLineCount() - 1)
+                                        - log.getScrollY() - log.getHeight();
+                                if(scrollDelta > 0)
+                                    log.scrollBy(0, scrollDelta);
+                            }
+                        }
+                    }
+                });
+    }
+
+    @Override
     public void showMessage(String msg) {
-        Snackbar.make(getActivity().findViewById(android.R.id.content),
-                msg, Snackbar.LENGTH_SHORT).show();
+        getActivity().runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        Snackbar.make(getActivity().findViewById(android.R.id.content),
+                                msg, Snackbar.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     @Override
@@ -176,6 +220,11 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     }
 
     @Override
+    public String getListenInDuration() {
+        return listenInDuration.getText().toString();
+    }
+
+    @Override
     public boolean insertBadData() {
         return insertBadData.isChecked();
     }
@@ -186,11 +235,16 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     }
 
     @Override
-    public boolean insetBadChecksum() {
-        return insertBadData.isChecked();
+    public boolean insertBadChecksum() {
+        return badCheksum.isChecked();
     }
 
-    void setCodeByResource(final int r){
+    @Override
+    public boolean insertListenIn() {
+        return insertListenIn.isChecked();
+    }
+
+    void setCodeByResource(final int r) {
         String[] array = getResources().getStringArray(r);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, array); //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -231,6 +285,13 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     }
 
     @Override
+    public void loadInfoView(String protocolOrReceiverName) {
+        Intent intent = new Intent(this.getContext(), InfoActivity.class);
+        intent.putExtra(InfoActivity.PROTOCOL_OR_RECEIVER_NAME, protocolOrReceiverName);
+        startActivity(intent);
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
 
@@ -260,6 +321,7 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
                 break;
             }
             case R.id.buttonClear: {
+
                 this.clearLog();
                 break;
             }
@@ -279,8 +341,6 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
                 this.partition.setEnabled(insertBadData());
                 break;
             }
-
-
         }
     }
 
@@ -312,7 +372,7 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     @BindView(R.id.buttonInfo)
     Button buttonInfo;
     @BindView(R.id.log)
-    EditText log;
+    TextView log;
     @BindView(R.id.ref)
     EditText ref;
     @BindView(R.id.zone_usr)
@@ -331,6 +391,5 @@ public class HoneywellMX8000 extends Fragment implements SimulatorContract.View 
     EditText listenInDuration;
     @BindView(R.id.insertListenIn)
     CheckBox insertListenIn;
-
 }
 

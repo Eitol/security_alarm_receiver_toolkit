@@ -1,10 +1,9 @@
 [X] Cargar eventos de tipo system
 [X] Generar eventos de tipo system
 [X] Añadir bad data
-[] Añadir caller info
-[] Añadir bad checksum
-[] Añadir listen in
-[] Hacer funcionar el boton clear
-[] Hacer funcionar el boton info
-[] Rellenar TODOS los datos con el boton random
-[] Añadir datos al log
+[X] Añadir caller info
+[X] Añadir bad checksum
+[X] Añadir listen in
+[X] Hacer funcionar el boton clear
+[X] Hacer funcionar el boton info
+[X] Añadir datos al log

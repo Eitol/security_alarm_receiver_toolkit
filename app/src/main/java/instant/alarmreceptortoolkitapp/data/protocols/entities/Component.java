@@ -30,7 +30,7 @@ public enum Component {
     QUALIFIER("qualifier"),
     PARTITION("partition"),
     DESCRIPTION("description"),
-    EVENT_FIELD_BAD_DATA("efbd"),
+    BAD_DATA("efbd"),
     EVENT_FIELD_GOOD_DATA("efgd"),
     CALLER_ID_NAME("c_name"),
     CALLER_ID_PHONE("c_phone"),

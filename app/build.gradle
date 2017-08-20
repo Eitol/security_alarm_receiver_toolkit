@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -37,7 +38,7 @@ dependencies {
     compile 'com.android.support:design:26.0.+'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile ('io.socket:socket.io-client:0.8.3') {
+    compile('io.socket:socket.io-client:0.8.3') {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
     }
@@ -50,4 +51,5 @@ dependencies {
     compile 'org.mockito:mockito-core:1.10.19'
     compile 'com.github.javadev:underscore:1.27'
     compile 'commons-codec:commons-codec:1.10'
+    compile 'us.feras.mdv:markdownview:1.1.0'
 }

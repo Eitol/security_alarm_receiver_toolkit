@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 import instant.alarmreceptortoolkitapp.data.protocols.entities.Component;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.Event;
@@ -18,7 +19,7 @@ import instant.alarmreceptortoolkitapp.global.Constants;
  */
 public class Ademco8000Signal extends Signal {
 
-    private Component[] mReqFields=null;
+    private Component[] mReqFields = null;
     private Ademco8000PanelData panelData;
 
     public Ademco8000Signal(MsgType msgType) {
@@ -50,7 +51,7 @@ public class Ademco8000Signal extends Signal {
 
     @Override
     public Component[] getRequiredFields() {
-        if (mReqFields == null){
+        if (mReqFields == null) {
             mReqFields = getRequiredFields(getMsgType());
         }
         return mReqFields;
@@ -61,11 +62,11 @@ public class Ademco8000Signal extends Signal {
         Component rcvr = Component.build(Component.RECEIVER, 2);
         if (msg_type == MsgType.CALL) {
             Component fmt = Component.build(Component.FMT, 3);
-            Component line = Component.build(Component.LINE,  2);
+            Component line = Component.build(Component.LINE, 2);
             return new Component[]{rcvr, fmt, line};
         }
         if (msg_type == MsgType.HEART_BEAT || msg_type == MsgType.SYSTEM) {
-            return  new Component[]{rcvr};
+            return new Component[]{rcvr};
         }
         return null;
     }
@@ -94,7 +95,47 @@ public class Ademco8000Signal extends Signal {
     }
 
     /**
+     * Get the validation byte (V-Byte or Error-check byte)
+     *
+     * @param msg:    The msg up to and including the byte preceding the validation byte.
+     * @param hasBOM: Indicate with the msg contains an Beginning of Message (BOM)
+     * @return The byte V-Byte.
+     * <p>
+     * Note: If the msg contains the BOM this must be removed.
+     * E.g: For ademco mx8000 usualy the BOM is '5', then some msg looks like this:
+     * 5070211"083503"01"9956"r10y
+     * But the first byte must be removed:
+     * 070211"083503"01"9956"r10y
+     * <p>
+     * This algorithm is based on the official document of Silent Knight 9000 Protocol
+     * and Ademco8000
+     * Link: https://www.silentknight.com/documentation/Documents/151059.pdf (view 8.2.6)
+     */
+    public byte makeGoodVByte(byte[] msg, boolean hasBOM) {
+        if (hasBOM) {
+            msg = Arrays.copyOfRange(msg, 1, msg.length);
+        }
+
+        // 1- Set the V-Byte comparison byte to zero
+        byte vbyte = 0x00;
+
+        for (int i = 0; i < msg.length; i++) {
+            // 2- Add the first (or next) byte of the message to the V-Byte comparison byte
+            vbyte += msg[i];
+
+            // 3- Clear bit 7 of the V-Byte comparison byte.
+            vbyte &= ~(1 << 7);
+
+            // 4- Set bit 6 of the V-Byte comparison byte
+            vbyte |= 1 << 6;
+        }
+        return vbyte;
+    }
+
+
+    /**
      * Build the header based on the current componetns
+     *
      * @param refNumber Reference number
      * @return The bytes of the signal header
      */
@@ -126,30 +167,23 @@ public class Ademco8000Signal extends Signal {
      * A heartbeat can be identified by the reference  number used in the AE
      * header that will always be '0000'.
      */
-    private byte[] buildMsgTypeHeartBeat() {
+    private byte[] buildMsgBody(byte[] innerData) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        byte[] heartBeatRef = "0000".getBytes();
+        byte[] heartBeatRef = null;
+
+        if (getMsgType() == MsgType.HEART_BEAT){
+            // "A heartbeat can be identified by the reference number used in the AE
+            //  header that will always be 0000". See: Section 8.8.4, Pag 8-8
+            heartBeatRef = "0000".getBytes();
+        }else{
+            heartBeatRef = getReferenceNumber().getBytes();
+        }
         byte[] header = buildMsgHeader(heartBeatRef);
         try {
             out.write(header);
-            out.write(makeVByte(out.toByteArray(), getBOM() != null));
-            out.write(getEndOfMessage());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return out.toByteArray();
-    }
-
-    /**
-     * Build a System message.
-     */
-    private byte[] buildMsgTypeSystem() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        byte[] header = buildMsgHeader(getReferenceNumber().getBytes());
-        try {
-            out.write(header);
-            for (Event e : getEvents()) {
-                out.write(e.build());
+            // Insert the inner data like FMT, Line, Panel data, etc
+            if (innerData != null) {
+                out.write(innerData);
             }
             out.write(makeVByte(out.toByteArray(), getBOM() != null));
             out.write(getEndOfMessage());
@@ -159,26 +193,47 @@ public class Ademco8000Signal extends Signal {
         return out.toByteArray();
     }
 
+
+    /**
+     * Build a HeartBeat message.
+     * A heartbeat can be identified by the reference  number used in the AE
+     * header that will always be '0000'.
+     */
+    private byte[] buildMsgTypeHeartBeat() {
+        return buildMsgBody(null);
+    }
+
+    /**
+     * Build a System message.
+     */
+    private byte[] buildMsgTypeSystem() {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try {
+            for (Event e : getEvents()) {
+                out.write(e.build());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return buildMsgBody(out.toByteArray());
+    }
+
     /**
      * Build a Call Message.
      */
     private byte[] buildMsgTypeCall() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        byte[] header = buildMsgHeader(getReferenceNumber().getBytes());
         try {
-            out.write(header);
             out.write(getProperty(Component.FMT).getBytes());
             out.write(getProperty(Component.LINE).getBytes());
             out.write(panelData.buildFrame());
-            out.write(makeVByte(out.toByteArray(), getBOM() != null));
-            out.write(getEndOfMessage());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return out.toByteArray();
+        return buildMsgBody(out.toByteArray());
     }
 
-    public void addPanelData(Ademco8000PanelData data){
+    public void addPanelData(Ademco8000PanelData data) {
         panelData = data;
     }
 
@@ -196,14 +251,15 @@ public class Ademco8000Signal extends Signal {
 
     /**
      * Set the value of signal header     .
+     *
      * @param rcvr receiver
      * @param date Date of the signal. If is null then the current date is set
      * @param time Time of the signal. If is null then the current time is set
-     * @param ref Reference number. If is null then the ref counter is set
+     * @param ref  Reference number. If is null then the ref counter is set
      */
-    public void setSignalHeader(String rcvr, String date, String time, String ref){
+    public void setSignalHeader(String rcvr, String date, String time, String ref) {
         this.addProperty(Component.RECEIVER, rcvr);
-        if (date != null && date.length() > 0 ) {
+        if (date != null && date.length() > 0) {
             this.addProperty(Component.DATE, date);
         }
         if (time != null && time.length() > 0) {

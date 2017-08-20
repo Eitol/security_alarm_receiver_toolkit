@@ -192,24 +192,23 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signal_frame" />
 
-        <EditText
+        <TextView
             android:id="@+id/log"
-            android:layout_width="382dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:maxLines="5"
-            android:minLines="5"
             android:textAlignment="viewStart"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textLogTittle"
-            tools:layout_editor_absoluteX="2dp" />
+            tools:layout_editor_absoluteX="2dp"
+            android:gravity="bottom"
+            />
 
         <TextView
             android:id="@+id/textLogTittle"
@@ -318,17 +317,16 @@
             android:layout_width="110dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
+            android:digits="0123456789ABCDEF"
             android:ems="10"
             android:enabled="false"
             android:hint="@string/bad_data"
-            android:textSize="18sp"
+            android:inputType="textNoSuggestions|textCapCharacters"
             android:maxLength="10"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/partition"
             app:layout_constraintStart_toEndOf="@+id/partition"
-            app:layout_constraintTop_toTopOf="@+id/partition"
-            android:digits="0123456789ABCDEF"
-            android:inputType="textCapCharacters"
-            />
+            app:layout_constraintTop_toTopOf="@+id/partition" />
 
         <EditText
             android:id="@+id/listenInDuration"
@@ -337,11 +335,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:ems="10"
+            android:enabled="false"
             android:hint="@string/listen_in_duration"
             android:inputType="number"
             android:maxLength="3"
             android:textSize="14sp"
-            android:enabled="false"
             app:layout_constraintBottom_toBottomOf="@+id/badDataText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/badDataText"
@@ -360,7 +358,5 @@
             app:layout_constraintStart_toEndOf="@+id/badCheksum"
             app:layout_constraintTop_toTopOf="@+id/badCheksum" />
 
-
     </android.support.constraint.ConstraintLayout>
-
 </FrameLayout>

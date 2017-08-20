@@ -30,4 +30,10 @@ public class ContactIDSignal extends Signal {
     public Component[] getRequiredFields() {
         return new Component[0];
     }
+
+
+    @Override
+    public byte makeGoodVByte(byte[] msg, boolean hasBOM) {
+        return 0;
+    }
 }

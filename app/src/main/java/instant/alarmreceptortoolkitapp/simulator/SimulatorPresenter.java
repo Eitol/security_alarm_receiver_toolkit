@@ -46,7 +46,9 @@ public class SimulatorPresenter implements SimulatorContract.Present {
             return;
         }
         mModel.sendSignal(frame);
-        mView.showFrame(new String(frame));
+        String frameS = new String(frame);
+        mView.showFrame(frameS);
+        mView.addToLog("send -> "+frameS);
     }
 
     public UIProtocolAdapter getUIProtocolAdapter(String protocolName) {
@@ -62,7 +64,7 @@ public class SimulatorPresenter implements SimulatorContract.Present {
 
     @Override
     public void onInfo() {
-
+        mView.loadInfoView(mView.getProtocolName());
     }
 
     void loadSystemCodes(){
@@ -119,12 +121,17 @@ public class SimulatorPresenter implements SimulatorContract.Present {
 
     @Override
     public void onServerConnextionFail() {
-        mView.showMessage("Server connection fail");
+        String msg = "Server connection fail";
+
+        mView.addToLog(msg);
+        mView.showMessage(msg);
     }
 
     @Override
     public void onServerConnextionSuccess() {
-        mView.showMessage("Server connection success");
+        String msg = "Server connection success";
+        mView.addToLog(msg);
+        mView.showMessage(msg);
     }
 
 

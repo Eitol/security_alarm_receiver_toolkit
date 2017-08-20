@@ -1,7 +1,7 @@
-package instant.alarmreceptortoolkitapp.simulator.ui_adapters;
+package instant.alarmreceptortoolkitapp.emulator.ui_adapters;
 
 import instant.alarmreceptortoolkitapp.data.protocols.entities.Signal;
-import instant.alarmreceptortoolkitapp.simulator.SimulatorContract;
+import instant.alarmreceptortoolkitapp.emulator.SimulatorContract;
 
 /**
  * Created by hector on 13/08/17.

@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator;
+package instant.alarmreceptortoolkitapp.emulator;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import instant.alarmreceptortoolkitapp.R;
-import instant.alarmreceptortoolkitapp.simulator.receptor_models.HoneywellMX8000;
+import instant.alarmreceptortoolkitapp.emulator.receptor_models.HoneywellMX8000;
 
 public class SimulatorActivity extends AppCompatActivity {
 

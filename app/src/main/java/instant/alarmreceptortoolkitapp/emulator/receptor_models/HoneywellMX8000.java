@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator.receptor_models;
+package instant.alarmreceptortoolkitapp.emulator.receptor_models;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import instant.alarmreceptortoolkitapp.R;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.MsgType;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000Protocol;
 import instant.alarmreceptortoolkitapp.global.activities.InfoActivity;
-import instant.alarmreceptortoolkitapp.simulator.SimulatorContract;
+import instant.alarmreceptortoolkitapp.emulator.SimulatorContract;
 
 
 public class HoneywellMX8000 extends Fragment implements SimulatorContract.View {

@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator.ui_adapters;
+package instant.alarmreceptortoolkitapp.emulator.ui_adapters;
 
 import org.junit.Test;
 

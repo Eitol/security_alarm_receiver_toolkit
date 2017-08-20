@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import java.net.URISyntaxException;
 
 import instant.alarmreceptortoolkitapp.global.Constants;
-import instant.alarmreceptortoolkitapp.simulator.SimulatorContract;
+import instant.alarmreceptortoolkitapp.emulator.SimulatorContract;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;

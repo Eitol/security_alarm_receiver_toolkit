@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="instant.alarmreceptortoolkitapp.simulator.receptor_models.HoneywellMX8000">
+    tools:context="instant.alarmreceptortoolkitapp.emulator.receptor_models.HoneywellMX8000">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator;
+package instant.alarmreceptortoolkitapp.emulator;
 
 import instant.alarmreceptortoolkitapp.base.BaseModel;
 import instant.alarmreceptortoolkitapp.base.BasePresenter;

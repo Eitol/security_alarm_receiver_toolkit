@@ -26,9 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".simulator.selectors.ReceptorModelSelectorActivity" />
-        <activity android:name=".simulator.selectors.SimulationTypeSelectorActivity" />
-        <activity android:name=".simulator.SimulatorActivity" />
+        <activity android:name=".emulator.selectors.ReceptorModelSelectorActivity" />
+        <activity android:name=".emulator.selectors.SimulationTypeSelectorActivity" />
+        <activity android:name=".emulator.SimulatorActivity" />
         <activity android:name=".global.activities.InfoActivity"></activity>
     </application>
 

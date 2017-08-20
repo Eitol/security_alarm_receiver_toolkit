@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator.selectors;
+package instant.alarmreceptortoolkitapp.emulator.selectors;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import instant.alarmreceptortoolkitapp.R;
-import instant.alarmreceptortoolkitapp.simulator.SimulatorActivity;
+import instant.alarmreceptortoolkitapp.emulator.SimulatorActivity;
 
 public class ReceptorModelSelectorActivity extends AppCompatActivity {
 

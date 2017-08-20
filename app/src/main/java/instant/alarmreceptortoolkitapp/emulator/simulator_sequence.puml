@@ -13,5 +13,11 @@ V -> P: onSend(Signal)
 P -> M: sendMgs(Signal)
 M -> I: sendMgs(String)
 end box
-I -->> Server_Raspberry: FRAME
+I --> Server_Raspberry: SIGNAL
+Server_Raspberry ->> AutomationPC: SIGNAL
+Server_Raspberry <-- AutomationPC: ACK
+I <- Server_Raspberry: ACK
+M <- I: ACK
+P <- M: ACK
+V <- P: ACK
 @enduml

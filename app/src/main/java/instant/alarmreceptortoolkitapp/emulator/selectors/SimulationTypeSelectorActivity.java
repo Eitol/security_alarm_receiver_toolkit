@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator.selectors;
+package instant.alarmreceptortoolkitapp.emulator.selectors;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator;
+package instant.alarmreceptortoolkitapp.emulator;
 
 import android.util.Log;
 import android.view.View;
@@ -11,8 +11,8 @@ import java.util.Random;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.Signal;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000Protocol;
 import instant.alarmreceptortoolkitapp.global.Constants;
-import instant.alarmreceptortoolkitapp.simulator.ui_adapters.UIProtocolAdapter;
-import instant.alarmreceptortoolkitapp.simulator.ui_adapters.UIProtocol_Ademco8000_Adapter;
+import instant.alarmreceptortoolkitapp.emulator.ui_adapters.UIProtocolAdapter;
+import instant.alarmreceptortoolkitapp.emulator.ui_adapters.UIProtocol_Ademco8000_Adapter;
 
 public class SimulatorPresenter implements SimulatorContract.Present {
 

@@ -1,4 +1,4 @@
-package instant.alarmreceptortoolkitapp.simulator.ui_adapters;
+package instant.alarmreceptortoolkitapp.emulator.ui_adapters;
 
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
@@ -20,7 +20,7 @@ import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000PanelData;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000Signal;
 import instant.alarmreceptortoolkitapp.data.protocols.entities.ademco8000.Ademco8000SystemEvent;
-import instant.alarmreceptortoolkitapp.simulator.SimulatorContract;
+import instant.alarmreceptortoolkitapp.emulator.SimulatorContract;
 
 /**
  * Created by hector on 13/08/17.

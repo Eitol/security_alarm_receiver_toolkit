@@ -1,0 +1,9 @@
+[X] Cargar eventos de tipo system
+[X] Generar eventos de tipo system
+[X] Añadir bad data
+[X] Añadir caller info
+[X] Añadir bad checksum
+[X] Añadir listen in
+[X] Hacer funcionar el boton clear
+[X] Hacer funcionar el boton info
+[X] Añadir datos al log

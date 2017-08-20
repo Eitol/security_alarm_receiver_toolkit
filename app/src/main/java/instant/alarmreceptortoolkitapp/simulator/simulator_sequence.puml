@@ -1,0 +1,17 @@
+@startuml
+autonumber
+hide footbox
+title User click in send button
+box "App"
+actor User as u
+boundary Fragment as V <<View>>
+control Presenter as P
+entity Model as M
+entity SocketIOInteractor as I
+u -> V: click on send button
+V -> P: onSend(Signal)
+P -> M: sendMgs(Signal)
+M -> I: sendMgs(String)
+end box
+I -->> Server_Raspberry: FRAME
+@enduml
